@@ -1,0 +1,84 @@
+
+
+1) let greetings = function(name) {
+    console.log(`Hello ${name}`); // function without name is called as anonymous function
+}
+Above function is called as anonymous function and it is assigned to a variable called greetings.
+
+2)
+A first-class function in JavaScript is a function that can be treated like any other variable.
+ This means that functions can be:
+Assigned to variables
+Passed as arguments to other functions
+Returned from other functions
+Stored in data structures
+Indexed by other objects
+
+3) What is meant by anonymous function ?
+Ans = A function without a name is called an anonymous function.
+
+4) What is meant by callback function ?
+Ans = A callback function is a function passed into another function as an argument
+E.g.  function greet(name, callback) {
+        console.log('Hello, ' + name + '!');
+        callback();
+      }
+      function sayGoodbye() {
+        console.log('Goodbye!');
+      }
+      // The greet function takes a name and a callback function
+      greet('Alice', sayGoodbye);
+
+5) What is meant by higher order function ?
+Ans = A higher-order function is a function that takes another function as an argument
+      or returns another function as a result.
+     E.g. map() function is a higher-order function that takes a function as an argument and applies that function
+     to each element in an array.
+      The map() function then returns a new array with the results of the function applied to each element.
+      const numbers = [1, 2, 3, 4, 5];
+      const doubledNumbers = numbers.map(function(number) {
+      //map = higher order function || function(number) = callback function
+        return number * 2;
+      });
+     console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+
+
+6) What is meant by IIFE ?
+Ans = IIFE stands for Immediately Invoked Function Expression.
+      It is a design pattern which is also known as a Self-Executing Anonymous Function and contains two major parts.
+      The first is the anonymous function with lexical scope enclosed within the Grouping Operator ().
+      This prevents accessing variables within the IIFE idiom as well as polluting the global scope.
+      The second part creates the immediately executing function expression () through which the JavaScript engine
+      will directly interpret the function.
+      const result = (function() {
+        let name = "Barry";
+        return name;
+      })();
+      console.log(result); // Barry
+
+7) What is meant by setTimeout and setInterval ?
+Ans = setTimeout() is a function that executes a given function after a specified amount of time.
+      The setTimeout() function takes two parameters: a callback function and a time delay in milliseconds.
+      setTimeout() returns a timer ID that can be used to track the timer.
+
+      setTimeout() = Run function "Once" after interval of time
+        setInterval() = Run function "Repeatedly" after interval of time
+
+8) Explain Hoisting concept in simple words ?
+Ans = Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope
+      before code execution. Inevitably, this means that no matter where functions and variables are declared,
+      they are moved to the top of their scope regardless of whether their scope is global or local.
+
+      E.g Var Example
+
+      test = 10;
+      console.log(test);
+      var test;   // op = 10   But these can't occur in case of let and const
+
+   function hoisting example
+        test1();  // Prints the message Hello World
+        function test1(){
+        console.log("Hello World);
+        }
+     *** Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope*****
+    *********** IMP CONCEPT = Hoisting does not work in case of anonymous function and arrow functions************************

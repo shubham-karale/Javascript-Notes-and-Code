@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+ <h1 class="heading">     Welcome to Our Website</h1>
+ <p id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A perferendis provident quas quisquam? Ad culpa inventore
+     possimus quae sequi vero.</p>
+<h2 class="subheading"> Hi,How are You</h2>
+<div class="container">
+    <button id="btn">Click Me</button>
+</div>
+ <a href="www.yourdomain.com">Website Name</a>
+</body>
+<script>
+    const hText = document.querySelector('h1');
+    const pText = document.querySelector('#para');
+    const container = document.querySelector('.container');
+    hText.style.color = 'red'; // reason querySelector is in NodeList
+//    Updating and changing text
+//     Inner Text
+    /*
+      1) Ignores white spaces
+       2) Shows the text as it is
+     */
+    console.log(hText.innerText); // ignporing the white spaces present in the html code
+    console.log(console.innerText);
+//     Inner HTML
+    /*
+       1) Shows the white spaces present in the html code
+         2) Shows the code/tags inside the elements
+     */
+    console.log(hText.innerHTML); // shows the white spaces present in the html code
+    console.log(container.innerHTML); // shows the code/tags inside the elements
+//     --------------------------------------------------------------------------------------------------------********
+//     Getting the Attributes
+    console.log("----------------------------------------------");
+    const link = document.querySelector('a');
+    console.log(link.getAttribute('href')); // shows the value of the attribute
+//     Setting the Attributes
+    link.setAttribute('href','https://www.google.com');
+    console.log(link.getAttribute('href'));
+//     +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//     Changing the CSS
+    console.log("----------------------------------------------");
+    const btn = document.querySelector('#btn');
+    btn.style.backgroundColor = 'red';
+    btn.style.color = 'white';
+    btn.style.border = 'none';
+    btn.style.padding = '10px 20px';
+    btn.style.borderRadius = '10px';
+    btn.style.cursor = 'pointer';
+    btn.style.margin = '10px';
+    btn.style.fontSize = '20px';
+    btn.style.fontWeight = 'bold';
+    btn.style.boxShadow = '0 0 10px black';
+    btn.style.textShadow = '0 0 10px black';
+    btn.style.outline = 'none';
+    btn.style.transition = 'all 0.5s ease';
+    btn.style.transform = 'scale(1.1)';
+
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+          *{
+              font-family: "Century Gothic";
+              background-color: #212121;
+              color: white;
+          }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+<!--     Air Plane Ticket From-->
+    class AirplaneForm{
+         constructor(name,address,ticketNo,boardingPoint,destinationPoint)
+         {
+                this.name = name;
+                this.address = address;
+                this.ticketNo = ticketNo;
+                this.boardingPoint = boardingPoint;
+                this.destinationPoint = destinationPoint;
+                console.log(`Thanks for filling the form ${this.name}`) // This will be printed when we create object of this class
+         }
+         submit()
+         {
+             console.log(`Name: ${this.name} \n Address: ${this.address} \n Ticket No: ${this.ticketNo} \n Boarding Point: ${this.boardingPoint} \n Destination Point: ${this.destinationPoint}`);
+         }
+    }
+    let rohan = new AirplaneForm('Rohan','Delhi','123456789','Delhi','Mumbai');
+    rohan.submit();
+    const ram = new AirplaneForm('Ram','Delhi','123456789','Delhi','Mumbai');
+    ram.submit();
+//     +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  // Inheritance
+//     Inheritance is a mechanism in which one object acquires all the properties and behaviors of a parent object.
+//E.g
+        class Parent{
+            constructor(name,age)
+            {
+                this.name = name;
+                this.age = age;
+            }
+            greet()
+            {
+                console.log(`Hello ${this.name}`);
+            }
+
+        }
+        class Child extends Parent{
+            constructor(name,age) {
+                super(name,age);  // super() = Parent()
+            }
+
+
+        }
+        let child = new Child('Rohan',20);
+        child.greet();
+
+</script>
+</html>

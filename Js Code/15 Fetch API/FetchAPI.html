@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch the Data Using the Fetch API</title>
+</head>
+<style>
+   body{
+         background-color: #2a2a2a;
+         color: #fff;
+         font-family: Fira Code, monospace;
+         font-size: 20px;
+         text-align: center;
+         padding-top: 100px;
+   }
+</style>
+<body>
+
+</body>
+<script>
+
+    // Fetch() = It is used to fetch the data from the server. It returns a promise.
+    // why fetch() is two steps process ? = Because it is a promise.
+
+    /*
+       Difference between response headers and request headers
+         Request headers are used to send additional information to the server.
+            Response headers are used to send additional information to the client.
+     */
+
+    let p1 = fetch("https://api.chucknorris.io/jokes/random");
+    p1.then((response) => {
+        console.log(response);
+        return response.json();
+    }).then((data) => {
+        console.log(data);
+    }).catch((error) => {
+        console.log(error);
+    })
+</script>
+</html>

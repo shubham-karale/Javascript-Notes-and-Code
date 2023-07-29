@@ -1,0 +1,12 @@
+What is SessionStorage
+
+Ans = SessionStorage is a way to store data on the client’s computer. It allows the user to access the data across the pages of the website.
+
+1) What is the difference between SessionStorage and LocalStorage?
+Ans = SessionStorage is destroyed once the user closes the browser whereas LocalStorage stores data with no expiration date.
+
+Methods with explanation
+1)setItem() = This method is used to store the data in the storage object.
+2)getItem() = This method is used to retrieve the data from the storage object.
+3)removeItem() = This method is used to remove the data from the storage object.
+4)clear() = This method is used to remove all the data from the storage object.

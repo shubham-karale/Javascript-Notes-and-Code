@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation 4</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+            line-height: 3;
+        }
+    </style>
+</head>
+<body>
+<ul class="language">
+    <li>Javascript</li>
+    <li>Java</li>
+    <li>Python</li>
+    <li>C++</li>
+</ul>
+</body>
+<script>
+    <!--    Below Function is the unoptimised way to add the New Element-->
+    function addLangaue(langName) {
+        //  Step 1 = Create an Element
+        const ele = document.createElement('li');
+        // Set the Value for the Element
+        ele.innerHTML = `${langName}`;
+        // Selects the Parent and append the value of ele
+        document.querySelector('.language').appendChild(ele);
+    }
+    // Below function is the optimised way to add the new element
+    // Why ? Because it is not using the Traversing the tree each time
+    function addLangaugeOPTIMISEDWAY(langName) {
+        const ele = document.createElement('li');
+        ele.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(ele);
+        ele.style.color = 'green';
+    }
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    //Editing Already Present Elem
+    addLangaue('typeScript');
+    addLangaue("C#");
+    addLangaue("PHP");
+    addLangaugeOPTIMISEDWAY("Ruby");
+    addLangaugeOPTIMISEDWAY("C");
+    addLangaugeOPTIMISEDWAY("C#");
+    addLangaugeOPTIMISEDWAY("REACT JS");
+    addLangaugeOPTIMISEDWAY("ANGULAR JS");
+    addLangaugeOPTIMISEDWAY("VUE JS");
+    addLangaugeOPTIMISEDWAY("NODE JS");
+
+    // Method 1
+    const langEle = document.querySelector('li:nth-child(2)');
+    langEle.innerHTML = "MOJO";
+
+    // Method 2
+    const replaceLang = document.querySelector('li:nth-child(3)');
+    const newEle = document.createElement('li');
+    newEle.appendChild(document.createTextNode("AWS"));
+    replaceLang.replaceWith(newEle);
+
+    // Method 3
+    const fourthEle = document.querySelector('li:nth-child(4)');
+    const newEle4 = document.createElement("li");
+    newEle4.textContent = "SWIFT"
+    fourthEle.replaceWith(newEle4);
+
+    // Practice 1
+    const thirdEle = document.querySelector('li:nth-child(3)');
+    const newEle5= document.createElement("li");
+    newEle5.textContent = "KOTLIN"
+    thirdEle.replaceWith(newEle5);
+
+// Edit the Elements Using DOM Manupulation in Js
+    const sixthLang = document.querySelector('li:nth-child(6)');
+    sixthLang.outerHTML = "<li>GO</li>";
+
+//     Remove
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+
+
+
+
+</script>
+</html>

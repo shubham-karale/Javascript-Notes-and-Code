@@ -1,0 +1,163 @@
+<!--
+  **** TOPICS TO READ IN EVENT CLICK LISTENER ****
+  1)types and
+  2)timeStamps
+  3) defaultprevented
+    4) target
+    5) toElement
+    6)srcElement
+    7)currentTarget
+    8)clientX
+    9)clientY
+    10)screenX
+    11)screenY
+    12) altkey ctrlKey shiftKey
+    13)keyCode
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>htnml Events </title>
+  <style>
+    body{
+    background-color: #414141;
+    color: aliceblue;
+    }
+    h2{
+      text-align: center;
+    }
+    a{
+    color: aliceblue;
+    }
+    ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    img{
+      width: 300px;
+    }
+    #images li{
+      list-style: none;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body >
+<h2>Amazing image</h2>
+<div >
+  <ul id="images">
+    <li><img  id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+    <li><img  id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+    <li><img  id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+    <li><img  id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+    <li><img  id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+    <li><a href="https://google.com" id="google">Google</a></li>
+  </ul>
+</div>
+</body>
+<script>
+<!--  Method 1 Onclicking-->
+    // .onlclick() method is used to perform an action on clicking an element
+    // .onclick() has less browser support or fewer functionalities
+    document.getElementById('japan').onclick = function()
+    {
+        alert('You clicked on japan image');
+    }
+
+//     Method 2
+/*
+     AddEventListener() method is used to perform an action on clicking an element
+        .addEventListener() has more browser support or more functionalities
+        .addEventListener() is used to add multiple events on a single element
+
+ */
+    document.getElementById('river').addEventListener('click',function()
+    {
+        alert('You clicked on river image');
+    },false);  // false is default value in addEventListener() method
+
+// *******************************************************************************************************************
+//
+/*
+          What is Event Propagation?
+          Ans = Event propagation is a way of defining the element order when an event occurs.
+          there are two types of event propagation 1)Bubbling 2)Capturing
+          1)Bubbling = false
+          2)Capturing = true
+ */
+// Event Bubbling Example
+      document.getElementById('images').addEventListener('click',function(e)
+        {
+            alert('You clicked on  image');
+        },false);  // false is default value in addEventListener() method
+    document.getElementById('owl').addEventListener('click',function()
+    {
+        alert('You clicked on owl image');
+    },false);  // false is default value in addEventListener() method
+
+
+/*
+  For Conclusion
+  1) for other case or ids the first event will be called first
+  2) for own id the 2nd event called first and then it will called the first event
+ */
+// TO Stop event bubbling we use stopPropagation() method
+    document.getElementById('owl').addEventListener('click',function(event)
+    {
+        event.stopPropagation();
+        alert('You clicked on owl image');
+    },false);  // false is default value in addEventListener() method
+
+/*
+   for bubbling = bottom to top
+   for capturing = top to bottom
+
+ */
+// Capturing Example = top to bottom
+    document.getElementById('images').addEventListener('click',function()
+    {
+        alert('You clicked on  image');
+    },true); // first event will run first in event capturing a
+    document.getElementById('owl').addEventListener('click',function()
+    {
+        alert('You clicked on owl image');
+    },true);
+
+
+//     -----------------------------------------------------------------------------------------------------------------
+// defaultPrevented Mehthod
+//     defaultPrevented method is used to prevent the default action of an element
+    document.getElementById('google').addEventListener('click',function(event)
+    {
+        event.preventDefault();
+        event.stopPropagation()
+        alert('You clicked on google link');
+    },false);  // false is default value in addEventListener() method
+
+
+//    -----------------------------------------------------------------------------------------------------------------
+// Small Projects on Events  = By clicking on image it will remove the image
+     const images =  document.querySelector('#images').addEventListener('click',function(event){
+       console.log(event.target.parentNode);
+       // Problem with this code is that it will remove the whole li element on clicking the left side of image
+       let removeIt = event.target.parentNode;
+       //removeIt.remove()
+     });
+
+const images =  document.querySelector('#images').addEventListener('click',function(event){
+  console.log(event.target.tagName);
+  let removeIt = event.target.tagName;
+  if(removeIt === 'IMG')
+  {
+    removeIt.remove()
+  }
+
+});
+</script>

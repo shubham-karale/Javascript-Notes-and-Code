@@ -1,0 +1,46 @@
+What is Promises in JavaScript?
+Ans = Promises are used to handle asynchronous operations in JavaScript. They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanageable code.
+
+Syntax = new Promise(function(resolve, reject) { ... } );
+************************************************************************************************************************************************
+
+
+++++++++++++++++++WHY WE USE THE PROMISE IN JAVASCRIPT?++++++++++++++++
+Promises provide a way to handle the results of asynchronous operations in a clean and predictable way. They also help to prevent callback hell, which is a situation where a series of callbacks are nested inside each other, making the code difficult to read and understand.
+
+Here are some of the benefits of using promises in JavaScript:
+
+1)Prevent callback hell: Promises help to prevent callback hell by providing a way to chain together asynchronous
+operations in a more readable and maintainable way.
+2)Handle errors: Promises provide a way to handle errors from asynchronous operations in a clean and predictable way.
+3) Make code more readable: Promises can make code more readable by providing a way to separate the code that handles
+the asynchronous operation from the code that uses the result of the asynchronous operation.
+4) Improve performance: Promises can improve performance by allowing the program to continue to do other things while
+the asynchronous operation is running.
+Overall, promises are a powerful tool that can help to make asynchronous code in JavaScript more readable, maintainable, and performant.
+
+Here are some of the common use cases for promises in JavaScript:
+
+Making HTTP requests: Promises can be used to make HTTP requests to web servers. This is a common use case for promises, as HTTP requests are often asynchronous operations.
+Reading and writing files: Promises can be used to read and write files. This is another common use case for promises, as file operations are often asynchronous operations.
+
+What is Parallel Programming? = Parallel programming is a type of computation in which many calculations are carried out simultaneously.
+
+What is Parallel Execution? = Parallel execution is a method of simultaneously running multiple tasks.
+
+ What is the difference between Parallel Programming and Parallel Execution? = Parallel programming is a type of
+ computation in which many calculations are carried out simultaneously. Parallel execution is a method of
+ simultaneously running multiple tasks.
+ ********************************************************************************************************************************************
+
+ then() method takes two arguments, a callback for success and another for failure.
+ // catch() method is equivalent to then(null, rejection) and is used for catching errors.
+
+
+ ********************************************************************************************************************************************
+
+ What is Promise Chaining in JS = Promise chaining is a method of chaining multiple promises together to execute them in a sequence.
+ We can attach multiple handlers with Promises
+
+ Qu What is the difference between Promise chaining and Promise multiple handlers
+ = Promise chaining is a method of chaining multiple promises together to execute them in a sequence. We can attach multiple handlers with Promises. Promise multiple handlers is a method of attaching multiple handlers to a single promise. We can attach multiple handlers with Promises.

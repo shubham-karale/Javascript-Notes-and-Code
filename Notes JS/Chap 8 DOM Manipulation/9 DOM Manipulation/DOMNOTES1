@@ -1,0 +1,52 @@
+DOM = Document Object Model
+Created by the browser as the html load into the browser
+Browser create the object of the html called as document object
+In DOM is tree like structure
+
+1) document.getElementById("").getAttribute("")
+2) document.getElementById("").setAttribute("","") = set the attribute
+3) When you set the attribute using setAttribute, it will be added to the element it will always override the attribute
+
+const title = document.getElementById("title");
+title.style.background-color = 'red';
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+How to display content of website using  Javascript (console.log) ?
+Ans = 1) innerText = document.getElementById("").innerText
+      2) innerHTML = document.getElementById("").innerHTML = shows text content + HTML if written in the content
+      3) textContent = document.getElementById("").textContent = also shows the hidden content
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+document.querySelector("h1"); = select the first element of the document
+In Query Selector we can also used the id's and classes
+e.g. document.querySelector("#title"); = select the element with id = title
+     document.querySelector(".title"); = select the element with class = title
+
+****    NodeList is not same as arrays in javascript ****
+****    NodeList is a list of nodes ****
+E.g.    const nodes = document.querySelectorAll('li');
+          nodes.style.color = 'yellow'; // These will give error messages
+          nodes[1].style.color = 'pink'; // These will work
+
+   We can use forEach loop on NodeList
+   nodes.style.color = 'yellow';
+    nodes.forEach(function(node){
+        node.style.color = 'yellow';
+    });
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+3) getElementsByClassName
+    const items = document.getElementsByClassName('items');
+    Op type  = HTMLCollection
+    We can't use forEach loop on HTMLCollection
+
+   Qu. How to convert the HTMLCollection into array ?
+   Ans =  By using Array.from()
+    E.g. const items = document.getElementsByClassName('items');
+         const itemsArray = Array.from(items);
+         itemsArray.forEach(function(item){
+            console.log(item);
+         });

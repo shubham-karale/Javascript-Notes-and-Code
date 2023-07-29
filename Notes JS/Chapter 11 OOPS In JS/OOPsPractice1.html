@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "Century Gothic";
+            background-color: #212121;
+            color: white;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            width: 300px;
+            height: 30px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+
+        label {
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        input:active {
+            border: 2px solid #00ff00;
+            color: white;
+        }
+
+        input:focus {
+            border: 2px solid #00ff00;
+            color: white;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            padding: 5px;
+            background-color: #00ff00;
+            color: black;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome to Our Form</h1>
+<form action="#">
+    <label for="accountName" id="Name">Enter Your Name</label>
+    <input type="text" id="accountName" placeholder="Enter your name">
+    <label for="accountBalance" id="balance">Enter Your Balance</label>
+    <input type="number" id="accountBalance" placeholder="Enter your balance">
+    <button id="btn">Submit</button>
+
+</form>
+<br>
+
+<form id="depositForm">
+<!--      deposit form-->
+    <label for="accountNumber" id="account"> Account Number</label>
+    <input type="number" id="accountNumber" placeholder="Enter your">
+    <label for="depositAmount">Enter Amount to Deposit</label>
+    <input type="number" id="depositAmount" placeholder="Enter amount to deposit">
+    <button id="depositBtn">Deposit</button>
+</form>
+</body>
+<script>
+    const accountName = document.getElementById("accountName");
+    const accountBalance = document.getElementById("accountBalance");
+    const btn = document.getElementById("btn");
+    const accountArr = [];
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let account = new BankAccountDetails(accountName.value, accountBalance.value);
+        accountArr.push(account);
+        console.log(accountArr);
+    })
+
+    function BankAccountDetails(name, balance = 0) {
+        this.name = name;
+        this.accountNumber = Date.now();
+        this.balance = balance;
+
+    }
+
+
+    let shubhamAccount = new BankAccountDetails("shubham", 1000);
+
+
+    let sanidhyaAccount = new BankAccountDetails("sanidhya", 2000);
+
+    console.log(shubhamAccount);
+    console.log(sanidhyaAccount);
+
+    const depositForm = document.getElementById("depositForm");
+    const depositBtn = document.getElementById("depositBtn");
+    const depositAccount = document.getElementById("depositAccount")
+    const depositAmount = document.getElementById("depositAmount");
+
+    // depositBtn.addEventListener('click',(e)=>{
+    //     e.preventDefault();
+    //     let accountNumber = depositAccount.value;
+    //     let amount = depositAmount.value;
+
+    //     let account = accountArr.find((account)=>{
+    //         return account.accountNumber === accountNumber;
+    //     })
+    //     account.balance += Number(amount);
+    //     console.log(account);
+    //     console.log(accountArr);
+    // })
+
+
+</script>
+</html>

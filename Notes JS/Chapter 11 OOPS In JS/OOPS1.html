@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            font-family: "Century Gothic";
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+<!--    Syntax of Class-->
+    // class User {
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     sayHi() {
+    //         alert(this.name);
+    //     }
+    // }
+    let user = {
+        name: "John",
+        age: 30
+    };
+let fitness = {
+    run : function () {
+        console.log("Running")
+    },
+    walk : () => {
+        console.log("Walking")
+    },
+    cycling : () => {
+        console.log("Cycling")
+    }
+}
+console.log(user)
+//console.log(user.run()) // Error why? because user object doesn't have run method
+user.__proto__ = fitness // Now user object has run method
+
+console.log(user.run()) // Now it will work
+
+</script>
+</html>

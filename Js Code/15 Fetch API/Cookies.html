@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies In JS</title>
+  <style>
+        body{
+            background-color: #2a2a2a;
+            color: #fff;
+            font-family: Fira Code, monospace;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 100px;
+        }
+  </style>
+</head>
+<body>
+
+</body>
+
+<script>
+    // Cookies = It is a small piece of data stored on the client-side. It is used to store the information of the user.
+    // Cookies are used to store the information of the user.
+//     When you write your own cookie then it doesn't erase previous cookies. it's jus add the cookie to the list of cookies.
+
+// It is used to get the cookies.
+
+    document.cookie = "name = Shubham"
+    document.cookie = "location = Amravati"
+    document.cookie = "id = 25"
+    document.cookie = "name = Shubham; expires = Thu, 18 Dec 2021 12:00:00 UTC"
+
+    console.log(document.cookie)
+//************************************************************************************************************
+
+    let key = prompt("Enter Your Key")
+    let value = prompt("Enter Your Value")
+    document.cookie = `${key} = ${value}`
+
+    console.log(document.cookie)
+
+//     document.cookie = can't set more than one value at a time
+</script>
+</html>

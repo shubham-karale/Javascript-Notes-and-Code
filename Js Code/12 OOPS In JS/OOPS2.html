@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+        *{
+            font-family: "Century Gothic";
+            background-color: #212121;
+            color: white;
+        }
+  </style>
+</head>
+<body>
+
+</body>
+<script>
+      class RailwayForm{
+       //   Constructor is a special method which is used to initialize the object.'
+
+          constructor(name) {
+              this.name = name;
+              console.log(`Thanks for filling the form ${this.name}`) // This will be printed when we create object of this class
+
+          }
+        submit()
+        {
+            alert(`${this.name} Thanks for submitting the form`)
+        }
+        cancel()
+        {
+            alert(`${this.name} Thanks for cancelling the form`)
+        }
+      }
+      let rohan = new RailwayForm('Rohan');
+      let ram = new RailwayForm('Ram');
+
+
+        rohan.submit();
+        rohan.cancel();
+        ram.submit();
+        ram.cancel();
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      //****************CONSTRUCTOR***********************
+//       What is contrctor?
+//       Constructor is a special method which is used to initialize the object.
+</script>
+</html>

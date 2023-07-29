@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation 3</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+        <div class="days">Thursday</div>
+        <div class="days">Friday</div>
+        <div class="days">Saturday</div>
+        <div class="days">Sunday</div>
+    </div>
+</body>
+<script>
+    // Creating Element using JS in DOM
+    const div = document.createElement('div');
+    console.log(div);
+    div.className = 'container';
+    div.id = Math.round(Math.random()*10+1);
+    console.log(div);
+    div.setAttribute('title','This is a container');
+    console.log(div);
+    div.style.backgroundColor = 'green';
+    div.style.padding = '20px';
+    div.innerText = "Jo Jeetata Hai Woh Vijeta Hai , Par Jo Jeet Ko Failata Hai Woh Maharshi hai";
+    console.log(div);
+   // Developers Prefers .setAttribute() to set the Value
+   //  while div.style..... = It Overrides the Previous Value
+  //  Developers Prefers below methods to set the Value
+
+    // Meth 2
+    const addText = document.createTextNode('This is a text node');
+    div.appendChild(addText);
+    // How to attach created Element to Document ?
+    document.body.appendChild(div);
+
+</script>
+</html>

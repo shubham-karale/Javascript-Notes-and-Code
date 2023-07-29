@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise API and its Methods</title>
+    <style>
+        body{
+            background-color: #2a2a2a;
+            color: #fff;
+            font-family: Fira Code, monospace;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+<!--    Promise API Methods-->
+/*
+     Promise.all([promise1, promise2, ...]) = This method takes an array of promises and returns a single promise
+
+ */
+
+let p1 = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+        console.log("Promise 1")
+        resolve(69);
+    }, Math.floor ((Math.random())*1000));
+
+
+})
+let p2 = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+        console.log("Promise 2")
+        resolve(69);
+    }, Math.floor ((Math.random())*1000));
+})
+
+let p3 = new Promise((resolve, reject) => {
+    console.log("");
+    setTimeout(() => {
+        console.log("Promise 3")
+        // reject(69);
+        resolve(69);
+    }, Math.floor ((Math.random())*1000));
+})
+
+p1.then((value)=>{
+    console.log(p1.value);
+})
+p2.then((value)=>{
+    console.log(p2.value);
+})
+p3.then((value)=>{
+    console.log(p3.value);
+})
+let promise_all = Promise.all([p1,p2,p3]); // This method takes an array of promises and returns a single promise
+promise_all.then((value)=>{
+    console.log("These Method is Promise.allSettled()")
+    console.log(value);
+})
+// Promise.all([p1,p2,p3]) = executes when all the promises are resolved
+// If One of the Promise is failed then the whole Promise.all() is failed you can check it by using catch() method
+
+// Promise.allSettled([p1,p2,p3]) = executes when all the promises are resolved or rejected
+// If One of the Promise is failed then the whole Promise.allSettled() is not failed you can check it by using catch() method
+let promise_allSettled = Promise.allSettled([p1,p2,p3]); // This method takes an array of promises and returns a single promise
+promise_allSettled.then((value)=>{
+    console.log(value);
+});
+
+// Promise.race() = This method takes an array of promises and returns a single promise
+// It will return the first promise that is resolved or rejected
+// E.g.
+let promise_race = Promise.race([p1,p2,p3]); // This method takes an array of promises and returns a single promise
+promise_race.then((value)=>{
+    console.log(value)})
+
+//Promise.any() = This method takes an array of promises and returns a single promise
+// It will return the first promise that is resolved
+// E.g.
+let promise_any = Promise.any([p1,p2,p3]); // This method takes an array of promises and returns a single promise
+promise_any.then((value)=>{
+    console.log(value)})
+
+// Promise.resolve() = This method takes a value and returns a promise that is resolved
+// E.g.
+let promise_resolve = Promise.resolve(69);
+promise_resolve.then((value)=>{
+    console.log(value)})
+
+// Promise.reject() = This method takes a value and returns a promise that is rejected
+// E.g.
+let promise_reject = Promise.reject(69);
+promise_reject.then((value)=>{
+    console.log(value)})
+    .catch((value)=>{
+        console.log(value);
+    })
+
+</script>
+
+
+</html>

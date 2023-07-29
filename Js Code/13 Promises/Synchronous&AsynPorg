@@ -1,0 +1,29 @@
+Synchronous and asynchronous programming are two different ways of organizing the execution of tasks in a computer program.
+
+**Synchronous programming** is a way of organizing tasks where each task must finish before the next task can start. This means that the program will wait for each task to finish before moving on to the next one. This can be inefficient if a task takes a long time to complete, as the program will be blocked from doing anything else until that task is finished.
+
+**Asynchronous programming** is a way of organizing tasks where tasks can be executed independently of each other. This means that a task can start executing even if the previous task has not finished yet. This can be more efficient if a task takes a long time to complete, as the program can continue to do other things while the task is running.
+
+E.g.
+Here are some examples of synchronous and asynchronous programming:
+
+- A synchronous program that downloads a file from the internet would wait until the file has finished downloading before continuing.
+- An asynchronous program that downloads a file from the internet would start downloading the file and then continue to do other things while the file is downloading.
+
+//*********************************************************************************************************************************************
+
+// What is CallBack Function in JavaScript?
+Ans = A callback function is a function that is passed as an argument to another function, to be “called back” at a later time. A function that accepts other functions as arguments is called a higher-order function, which contains the logic for when the callback function gets executed. It’s the combination of these two that allow us to extend our functionality.
+
+//*********************************************************************************************************************************************
+
+**********************CallBack Hell**********************
+
+Callback hell is a situation in JavaScript where a series of callbacks are nested inside each other, making the code difficult to read and understand. This can happen when you need to chain together multiple asynchronous operations.
+
+ ++++++++++++++REF NOTES +++++++++++++++++++++
+
+ Pyramid of Doom = The pyramid of doom is a common problem in JavaScript where you have a series of nested callbacks that make the code difficult to read and understand. This can happen when you need to chain together multiple asynchronous operations.
+
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*

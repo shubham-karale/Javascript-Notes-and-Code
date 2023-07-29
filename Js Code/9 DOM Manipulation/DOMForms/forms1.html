@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM FORMS</title>
+</head>
+<style>
+    *{
+        background-color: #212121;
+        color: white;
+    }
+
+</style>
+<body>
+<!--     Creating Basic Sign-Up Forms-->
+ <h1>Sign Up Form For User</h1>
+    <form action="forms1.php" method="post" id="signUpForm">
+        <label for="userName">User Name</label>
+        <input type="text" name="username" id="userName" placeholder="Enter Your Name">
+        <label for="userEmail">User Email</label>
+        <input type="email" name="email" id="userEmail" placeholder="Enter Your Email">
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter Your Password">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+<script>
+    let signUpForm = document.querySelector('#signUpForm');
+    let userName = document.querySelector('#userName');
+    let userEmail = document.querySelector('#userEmail');
+    let password = document.querySelector('#password');
+    let passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$";
+
+    signUpForm.addEventListener('submit',function (e) {
+        e.preventDefault();
+        // console.log(e.target.username.value);
+        // console.log(e.target.password.value);
+        // console.log(username.value);
+        // console.log(password.value)
+
+    //      Using form Name
+    //     Standard Method of accessing the form elements is using the form name
+        console.log(signUpForm.email.value);
+        // form name is very crucial in JS because we can access the form elements using the form name
+        console.log(signUpForm.password.value)
+        let passwordValue = password.value;
+        console.log(passwordValue);
+        let result = passwordValue.match(passwordPattern);
+        if(result)
+        {
+            console.log('Password is Valid');
+            console.log(result)
+
+        }
+        else{
+            console.log('Password is Invalid');
+
+        }
+    })
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    /*
+        * Regular Expression (RegEx)
+        * RegEx is a sequence of characters that forms a search pattern
+        * RegEx can be used to check if a string contains the specified search pattern
+     */
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//     Implementation of password Validation
+//     1. Password must be 8 characters long
+//     2. Password must contain at least one uppercase letter
+//     3. Password must contain at least one lowercase letter
+//     4. Password must contain at least one number
+
+//     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//     Verify User Name using the RegEx
+//     signUpForm.addEventListener('submit',function (e) {
+//         e.preventDefault();
+//         let userName = document.querySelector('#userName');
+//         // REGEX for User Name
+//         let userNamePattern = "^[a-zA-Z0-9]{5,}$";
+//         let userNameValue = userName.value;
+//         // test() method is a JS method that tests for a match in a string
+//        let result = userNameValue.match(userNamePattern);
+//         if(result)
+//         {
+//             console.log('User Name is Valid');
+//             console.log(result)
+//
+//         }
+//         else{
+//             console.log('User Name is Invalid');
+//
+//         }
+//     })
+
+//     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//     Keyup Event  = checking the password while typing it shows the password valid or Not
+    let userNamePattern = "^[a-zA-Z0-9]{5,}$";
+    userName.addEventListener('keyup', function(e)
+    {
+        if(userNamePattern.test(e.target.value))
+        {
+            console.log('Passed');
+
+
+        }
+        else{
+            console.log('Failed');
+
+        }
+    })
+
+</script>
+</html>

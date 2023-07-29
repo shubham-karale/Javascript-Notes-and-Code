@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOPS 5</title>
+    <style>
+        *{
+            font-family: poppins,sans-serif;
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<!--  constructor Overriding-->
+</body>
+
+<script>
+    <!--    Constructor Overriding-->
+    class Parent{
+        constructor(name,age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+        greet()
+        {
+            console.log(`Hello ${this.name}`);
+        }
+    }
+    class Child extends Parent{
+        // constructor(name,age,designation)
+        // {
+        //     super(name,age);
+        //     this.designation = designation;
+        // }
+        greet()
+        {
+            console.log(`Hello ${this.name} your age is ${this.age} and your designation is ${this.designation}`);
+        }
+    }
+    let parent = new Parent();
+    let child = new Child('Rohan',20,'Programmer');
+    console.log(child.greet());
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//     ************STATIC METHODS***************
+//     Static methods are those methods which can be called without creating object of class
+
+    class Animal{
+        constructor(name){
+            // this.name = name;
+            this.name = Animal.firstLetterCapital(name);
+        }
+        walk(){
+            console.log("Hello"+Animal.firstLetterCapital(this.name)+" is walking");
+        }
+         static firstLetterCapital(name)
+        {
+            return name.charAt(0).toUpperCase() + name.substr(1,name.length);
+        }
+    }
+    // let dog = new Animal('dog');
+    // console.log(dog.walk())
+      let dogesh = new Animal(Animal.firstLetterCapital("Dogesh"));
+    // Here we are calling static method without creating object of class
+    console.log(dogesh.walk());
+
+
+</script>
+
+
+</html>

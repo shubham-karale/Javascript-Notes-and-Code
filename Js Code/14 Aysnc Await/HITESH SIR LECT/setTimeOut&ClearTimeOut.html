@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Set Time Out and Set Time Interval</title>
+    <style>
+        body{
+            background-color: #2a2a2a;
+            color: #fff;
+            font-family: Fira Code, monospace;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 100px;
+        }
+        button{
+            background-color: #fff;
+            color: #2a2a2a;
+            font-family: Fira Code, monospace;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+ <h2>Hello Kya Bolti Public</h2>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+
+</body>
+
+<script>
+<!--     SetTimeOut and SetInterval-->
+    /*
+         setTimeOut() = It is used to execute a function after a specified amount of time. It returns an id which can be used to clear the timeout.
+         clearTimeout() = It is used to stop the execution of the function specified in setTimeout().
+            setInterval() = It is used to execute a function repeatedly after a specified amount of time. It returns an id which can be used to clear the interval.
+            clearInterval() = It is used to stop the execution of the function specified in setInterval().
+     */
+    let start = document.querySelector("#start");
+    let stop = document.querySelector("#stop");
+    let heading  = document.querySelector("h2");
+
+    // const test = () => {
+    //     console.log("Hello");
+    // }
+    // const changeH1 = function (){
+    //     document.querySelector("h1").innerHTML = "Hello Senorita";
+    //      document.querySelector("h1").style.color = "magenta";
+    //
+    //
+    // }
+    // let timeOut = setTimeout(changeH1, 2000);
+    // stop.addEventListener("click", () => {
+    //     clearTimeout(timeOut);
+    //     console.log("Stopped");
+    // })
+ let interval;
+  start.addEventListener('click', () => {
+         interval = setInterval(() => {
+             const randomColor = Math.floor(Math.random()*16777215).toString(16);
+             document.body.style.backgroundColor = "#" + randomColor;
+             heading.innerHTML = "#" + randomColor;
+
+        }, 1000);
+
+  })
+
+stop.addEventListener('click', () => {
+        clearInterval(interval);
+        console.log("Stopped");
+    })
+
+</script>
+</html>
+

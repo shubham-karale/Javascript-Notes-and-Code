@@ -1,0 +1,29 @@
+                                  Event Bubbling
+
+   Definition = Event bubbling describes how the browser handles events targeted at nested elements.
+   When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
+
+   Example 1
+
+   <div id="container">
+     <button>Click me!</button>
+   </div>
+   <pre id="output"></pre>                                                     output = You clicked on a DIV  Element
+   El
+    element
+
+   const output = document.querySelector("#output");
+   function handleClick(e) {
+     output.textContent += `You clicked on a ${e.currentTarget.tagName} element\n`;
+   }
+
+   const container = document.querySelector("#container");
+   container.addEventListener("click", handleClick);
+
+   You'll see that the parent fires a click event when the user clicks the button:
+
+   You clicked on a DIV element
+   This makes sense: the button is inside the <div>, so when you click the button you're also implicitly clicking the element it is inside
+
+
+   event bubbling can sometimes create problems, but there is a way to prevent it. The Event object has a function available on it called stopPropagation() which, when called inside an event handler, prevents the event from bubbling up to any other elements.

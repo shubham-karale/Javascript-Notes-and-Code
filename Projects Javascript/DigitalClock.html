@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+        .container{
+            width: 600px;
+            background-color: blueviolet;
+            border: 3px solid red;
+            display: flex;
+            margin: 100px auto;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .clock{
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin: 50px auto;
+            position: relative;
+            top: 50%;
+            font-size:3rem;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+<div id="hours" class="clock"></div>
+<div id="minutes" class="clock"></div>
+<div id="seconds" class="clock"></div>
+
+</div>
+</body>
+<script>
+    let hours = document.getElementById('hours');
+    let minutes = document.getElementById('minutes');
+    let seconds = document.getElementById('seconds');
+    setInterval(function () {
+        let date = new Date();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
+        hours.innerText = hour;
+        minutes.innerText = minute;
+        seconds.innerText = second;
+    },1000);
+</script>
+</html>

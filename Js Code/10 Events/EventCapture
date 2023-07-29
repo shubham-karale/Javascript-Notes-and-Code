@@ -1,0 +1,32 @@
+                                      Event Delegation
+ This is like event bubbling but the order is reversed: the event fires first on the least nested element, and then on successively more nested elements, until the target is reached.
+
+ Event capture is disabled by default. To enable it you have to pass the capture option in addEventListener().
+
+ Example 1
+
+ <body>
+   <div id="container">
+     <button>Click me!</button>
+   </div>
+   <pre id="output"></pre>
+ </body>
+
+
+const output = document.querySelector("#output");
+function handleClick(e) {
+  output.textContent += `You clicked on a ${e.currentTarget.tagName} element\n`;
+}
+
+const container = document.querySelector("#container");
+const button = document.querySelector("button");
+
+document.body.addEventListener("click", handleClick, { capture: true });
+container.addEventListener("click", handleClick, { capture: true });
+button.addEventListener("click", handleClick);
+
+
+Output  = You clicked on a BODY element
+          You clicked on a DIV element
+          You clicked on a BUTTON element
+

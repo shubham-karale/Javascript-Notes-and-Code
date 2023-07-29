@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<!--MOST IMPORTANT FOR INTERVIEW-->
+<!-- Event Bubbling and Delegation-->
+<!--What is Event Bubbling and Delegation
+Ans = Event Bubbling is the bubbling up of events through the DOM. When an event happens on an element, it first runs the handlers on it
+, then on its parent, then all the way up on other ancestors.-->
+<!--Event Delegation is a technique of handling events on parent elements instead of individual child elements.
+With the help of event
+
+
+-->
+<h1>Welcome to Our Website</h1>
+<p class="copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eius in itaque
+    optio quam quis rem repudiandae vel velit? Accusamus aperiam asperiores, autem deserunt dolore
+    ducimus inventore itaque molestiae numquam provident. Ab, amet asperiores aut autem blanditiis fuga inventore itaque maiores non obcaecati quae quia quidem quis reprehenderit sint suscipit temporibus voluptas voluptatem! A ab consequatur dicta dolor esse nisi, non quae, quasi quibusdam recusandae rem, sapiente unde vero? Aliquam beatae consequuntur deleniti explicabo illo iusto mollitia nemo omnis placeat similique! Assumenda atque distinctio ducimus eaque, facilis fuga incidunt magni mollitia natus perspiciatis porro quia,
+    quod repellendus, reprehenderit vel vitae?</p>
+
+</body>
+<script>
+    const copy = document.querySelector('.copy');
+    copy.addEventListener('copy',function (e) {
+        console.log('You have copied the text');
+        alert("You have copied the text");
+        console.log(e);
+        setTimeout(function () {
+            e.target.style.color = 'red'; //When ever you want to add style in event listner just add eventName.target.style.property = 'value';
+        },500)
+    })
+</script>
+</html>

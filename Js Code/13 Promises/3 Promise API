@@ -1,0 +1,20 @@
+Promise API Methods:
+
+   1) Promise: Creates a new Promise object with an executor function that takes resolve and reject as parameters.
+   2) then: Handles the fulfillment of a Promise, taking onFulfilled and onRejected as optional callback functions.
+   3) catch: Handles Promise rejections, equivalent to then(null, onRejected).
+   4) finally: Executes a callback function regardless of fulfillment or rejection, commonly used for cleanup tasks.
+   5) Promise.all: Returns a new Promise fulfilled when all Promises in an array are fulfilled, or rejected if any are
+   rejected.
+   6) Promise.race: Returns a new Promise settled as soon as the first Promise in an array is settled.
+   7) Promise.resolve: Returns a new resolved Promise with an optional value, converting thenables into Promises if
+   necessary.
+    8) Promise.reject: Returns a new rejected Promise with a reason.
+
+Benefits of Promise API:
+
+    Enables handling asynchronous operations and their results.
+    Provides a more readable and maintainable code structure.
+    Supports chaining and composition of asynchronous operations.
+    Simplifies error handling through catch and finally.
+    Offers convenient methods for handling multiple Promises simultaneously (Promise.all and Promise.race).

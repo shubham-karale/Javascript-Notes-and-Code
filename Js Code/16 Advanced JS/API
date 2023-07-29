@@ -1,0 +1,12 @@
+ What is meant By API in programming?
+         API (Application Programming Interface) is a set of functions and procedures that allow two applications to interact
+  with each other. APIs are used to share data and resources between applications, and they can be used to build new applications that are integrated with existing ones.
+
+Here is an example of how an API works:
+
+You are using a weather app on your phone.
+The weather app needs to get the current weather conditions from a weather service.
+The weather app uses an API to connect to the weather service.
+The weather service sends the current weather conditions to the weather app.
+The weather app displays the current weather conditions to you.
+In this example, the API is the intermediary between the weather app and the weather service. The API allows the two applications to communicate with each other, even though they are written in different programming languages and use different technologies.

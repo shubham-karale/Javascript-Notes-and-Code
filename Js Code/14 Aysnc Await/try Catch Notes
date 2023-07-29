@@ -1,0 +1,55 @@
+// Try Catch Block in JS
+
+What is Try Catch Block in JS? = It is used to handle the errors in JS. It is used to handle the errors in JS.
+
+try only handles synchronous errors. It will not handle asynchronous errors. It will not handle asynchronous errors.
+
+    try/Catch:
+        Used to handle errors and exceptions in JavaScript.
+        Try block: Contains code that may throw an error.
+        Catch block: Handles the error thrown in the try block.
+        Execution moves to the catch block if an error occurs.
+        Catch block receives an error object representing the thrown error.
+        Error object provides information like error message and stack trace.
+
+
+try {
+  // Code that might throw an error
+} catch (error) {
+  // Error handling
+}
+
+    Benefits of try/catch:
+        Gracefully handles errors, preventing program crashes.
+        Allows structured error handling and recovery.
+        Provides access to error information for logging and analysis.
+
+
+        err.name = Error name
+        err.message = Error message
+
+
+     Finally = It is used to execute the code after try and catch block. It is used to execute the code after try and
+     catch block.
+     Why we used the finally clause in JS? = If the error occurs in the catch block then the function of finally will be
+      executed. If the error occurs in the catch block then the function of finally will be executed.
+
+     1)Try aur catch me se koi bhi chalega toh finally clause chalgea
+
+     //E.g.
+
+     const test = () => {
+       try{
+console.log("Program Ran Successfully");
+  return;
+
+       }
+       catch(err){
+         console.log("this is an error");
+       }
+       finally{
+         console.log("Finally Clause Executed");
+       }
+     }
+   Explanation =   In the above example, the try block will run successfully and the finally clause will be executed.
+   Despite function return finally clause will be executed

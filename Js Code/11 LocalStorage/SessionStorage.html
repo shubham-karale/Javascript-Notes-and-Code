@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session Storage</title>
+    <style>
+        body{
+            background-color: #2a2a2a;
+            color: #fff;
+            font-family: Fira Code, monospace;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+
+<script>
+<!--  Session Storage-->
+<!--  It is used to store the data on the client-side. -->
+/*
+  What is Session Storage
+  ans = It is used to store the data on the client-side. It is similar to the local storage but the only difference is that the data stored in the session storage is deleted when the browser is closed.
+  Only worked that tab only
+
+  Difference between Session Storage and Local Storage
+        Local Storage store the data of whole browsers and tab
+        Session Storage store the data of that tab
+ */
+
+ //  Session Storage Methods
+    // 1. setItem() = It is used to set the data in the session storage.
+    // 2. getItem() = It is used to get the data from the session storage.
+    // 3. removeItem() = It is used to remove the data from the session storage.
+    // 4. clear() = It is used to clear the whole session storage.
+    // 5. key() = It is used to get the key of the data from the session storage.
+
+ window.setItem("name", "Shubham");
+    sessionStorage.setItem("age", "25");
+    sessionStorage.setItem("country", "India");
+    sessionStorage.setItem("city", "Amravati");
+    sessionStorage.setItem("state", "Maharashtra");
+
+    //**************************************************************************************************************************
+//           Storage Event
+
+      window.onStorage((event) => {
+          console.log(event);
+      })
+</script>
+</html>

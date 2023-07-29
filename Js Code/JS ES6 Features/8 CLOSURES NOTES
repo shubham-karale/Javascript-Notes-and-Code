@@ -1,0 +1,26 @@
+
+
+
+What is CLOSURES in javascript ?
+        Ans = CLOSURE IS FUNCTION ALONG WITH ITS LEXICAL ENVIRONMENT
+
+ A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
+Closures = function toh return karega hi uske sath woh uska lexical environment bhi return karega
+
+
+
+CLOSURE EXAMPLE FOR THE INTERVIEWING
+
+
+  function init() {
+      var name = "Mozilla"; // name is a local variable created by init
+      function displayName() {
+          // displayName() is the inner function, that forms the closure
+          console.log(name); // use variable declared in the parent function
+      }
+      name = "Akshaya"
+      displayName(); //
+  }
+  let c = init();
+  // Akshaya Why ? = Because the closure (displayName) is called after the variable is changed = closure
+  // returns the latest value of the variable

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Request</title>
+    <style>
+        body {
+            background-color: #2a2a2a;
+            color: #fff;
+            font-family: Fira Code, monospace;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto auto;
+            text-align: center;
+            font-family: "JetBrains Mono", monospace;
+            border: 2px solid red;
+        }
+
+        button {
+            margin: 23px auto;
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: black;
+            background-color: wheat;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<!--  Making card -->
+
+<button id="clickhere">Click Here</button>
+<div class="card">
+    <img src="https://avatars.githubusercontent.com/u/56592247?v=4" alt="Avatar" style="width:100%" id="avatarImage">
+    <div class="container">
+        <h4><b>Hitesh Choudhary</b></h4>
+        <p id="followers">Followers :</p>
+    </div>
+</div>
+</body>
+<script>
+    <!--   API REQUEST OLD METHODS-->
+    // What is XMLHTTPRequest(XHR)
+    // XMLHTTPRequest is an object that is used to request data from a web server
+    // XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.
+    /*
+    Value	State	Description
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete.
+     */
+
+    // Response of an API is mostly data contains in the strings
+    const btn = document.getElementById('clickhere');
+    let avatarImage = document.getElementById('avatarImage');
+    let test = document.getElementById('followers');
+    const requestURL = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL);
+    // onreadystatechange() is an event handler that is called whenever the readyState attribute changes.
+    let avatar = null;
+    let follow = null;
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            // console.log(xhr.responseText);
+            // console.log(typeof xhr.responseText);
+            // console.log(JSON.parse(xhr.responseText));
+            // console.log(typeof JSON.parse(xhr.responseText));
+            const data = JSON.parse(xhr.responseText); // data is an object
+            console.log(typeof data)
+             avatar = data.avatar_url; // avatar is a string
+            console.log(avatar)
+             follow = data.followers;
+            console.log(followers);
+        }
+
+        btn.addEventListener('click', function () {
+            avatarImage.src = avatar;
+            followers.innerHTML = follow;
+            // document.body.appendChild(avatarImage);
+            followers.style.color = 'magenta';
+
+            console.log(`Avatar : ${avatar}`);
+            console.log(`Name : ${follow}`);
+        })
+
+
+    }
+
+
+    xhr.send();
+</script>
+</html>

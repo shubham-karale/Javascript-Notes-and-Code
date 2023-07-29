@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    *{
+        background-color: #212121;
+        color: white;
+    }
+</style>
+</head>
+<body>
+  <h1 class="title">Welcome to Our Webiste</h1>
+   <h2 class="subtitle">Hello User,How may I Help You !</h2>
+<p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eligendi enim fuga impedit inventore laudantium suscipit? Debitis dignissimos ducimus
+    magnam maiores porro quasi quis sequi sit veritatis! Natus, possimus, praesentium.</p>
+  <a href="www.youtube.com">Youtube Link</a>
+<button>Help me</button>
+<div class="container">
+
+    <h3 class="thirdHeading">testing docs</h3>
+    <h4>Hello World</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, expedita?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, expedita?</p>
+    <h5>How are you</h5>
+
+</div>
+</body>
+<script>
+<!--    Adding or removing class-->
+let heading = document.querySelector('h1');
+// adding class
+heading.classList.add('heading');
+// removing class
+heading.classList.remove('heading');
+// replacing class
+heading.classList.replace('heading','title');
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Parent Children and Siblings
+let container = document.querySelector('.container');
+console.log(container.children); // shows the children of the container
+
+// we can not apply the forEach loop on the HTML Collection elements
+// First convert the HTML Collection into the Array  = Array.from(container.children)
+Array.from(container.children).forEach(function (element) {
+    console.log(element);
+    element.style.color = 'green';
+    element.classList.add('kyaBoltiPublic');
+});
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Accessing Parent from child elements
+const thirdHeading = document.querySelector('.thirdHeading');
+console.log(thirdHeading.parentElement); // shows the parent of the thirdHeading
+
+</script>
+
+</html>

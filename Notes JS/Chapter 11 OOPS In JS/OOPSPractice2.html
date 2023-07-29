@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOPS 2 Practice</title>
+    <style>
+            *{
+                font-family: poppins,sans-serif;
+                background-color: #212121;
+                color: white;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            input{
+                width: 300px;
+                height: 30px;
+                margin: 10px;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                padding: 5px;
+            }
+            input:focus{
+                border: 2px solid #00ff00;
+                color: white;
+            }
+            input:active{
+                border: 2px solid #00ff00;
+                color: white;
+            }
+            label{
+                font-size: 20px;
+                margin: 10px;
+            }
+            button{
+                width: 100px;
+                height: 30px;
+                margin: 10px;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                padding: 5px;
+                background-color: #00ff00;
+                color: black;
+                font-size: 20px;
+            }
+    </style>
+</head>
+<body>
+<!--     Bank Account Forms-->
+<form action="" id="bankForm">
+    <label for="bank" >Bank Account Number</label>
+    <input type="text" name="userName" id="userName">
+    <label for="bank" >Bank Account Number</label>
+    <input type="text" name="userAccountNumber" id="accountNumber">
+    <button id="btn">Submit</button>
+
+</form>
+</body>
+<script>
+    let bankForm = document.getElementById('bankForm');
+    let userAccountNumber = document.getElementById('userAccountNumber');
+    let userName = document.getElementById('userName');
+    let btn = document.getElementById('btn');
+     function BankAccount(userName,balance = 0)
+     {
+            this.userName = userName;
+            this.balance = balance;
+            // this.deposit = function (amount)
+            // {
+            //     this.balance += amount;
+            //     return this.balance;
+            // }
+            // this.withdraw = function (amount)
+            // {
+            //     if (amount > this.balance)
+            //     {
+            //         return "Insufficient Balance";
+            //     }
+            //     else
+            //     {
+            //         this.balance -= amount;
+            //         return this.balance;
+            //     }
+            // }
+         BankAccount.prototype.deposit = function (amount)
+         {
+             this.balance += amount;
+             return this.balance;
+         }
+
+     }
+     // what is prototype = it is a property of a function which is used to add new property to the function
+
+    console.log(BankAccount.prototype);
+     let ranjan = new BankAccount("Ranjan",1000);
+     let shyam = new BankAccount("Shyam",2000);
+    console.log(ranjan.deposit(5000));
+    console.log(shyam.deposit(10000));
+
+</script>
+</html>

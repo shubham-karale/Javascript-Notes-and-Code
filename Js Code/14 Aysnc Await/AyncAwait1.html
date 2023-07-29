@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async Await</title>
+  <style>
+        body{
+            background-color: #2a2a2a;
+            color: #fff;
+            font-family: Fira Code, monospace;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 100px;
+        }
+  </style>
+</head>
+<body>
+
+</body>
+
+<script>
+ /* Async Await is a new way of writing asynchronous code in JavaScript. It is built on top of Promises and Generators. It is not available in NodeJS by default, you need to use Babel to use it in NodeJS. It is available in modern browsers.*/
+ // Async = It is used to define an asynchronous function. It returns a promise. It can contain await expressions.
+ async function weatherResponse() {
+     let puneWeather = new Promise((resolve, reject) => {
+         setTimeout(() => {
+             resolve("It is a sunny day in Pune");
+         }, 1000);
+     })
+
+     let mumbaiWeather = new Promise((resolve, reject) => {
+         setTimeout(() => {
+             resolve("It is a rainy day in Mumbai");
+         }, 3000);
+     })
+
+     let hyderabadWeather = new Promise((resolve, reject) => {
+         setTimeout(() => {
+             resolve("It is a cloudy day in Hyderabad");
+         }, 7000);
+     })
+
+     // puneWeather.then(alert);
+     //    mumbaiWeather.then(alert);
+     //    hyderabadWeather.then(alert);
+
+     //        Await = It is used to wait for the promise to resolve or reject. It can only be used inside an async function.
+     console.log("Fetching Pune Weather Pleaes Wait....");
+     let puneWeatherResponse = await puneWeather;
+     console.log(puneWeatherResponse)
+
+     // It will wait for the promise to resolve or reject. then move to the next line.
+
+     console.log("Fetching Mumbai Weather Pleaes Wait....");
+     let mumbaiWeatherResponse = await mumbaiWeather;
+     console.log(mumbaiWeatherResponse);
+
+
+     console.log("Fetching Hyderabad Weather Pleaes Wait....");
+     let hyderabadWeatherResponse = await hyderabadWeather;
+     console.log(hyderabadWeatherResponse);
+ }
+ //        Summary
+    //        1. We have created three promises for three different cities.
+    //        2. We have used await to wait for the promise to resolve or reject.
+    //        3. We have used console.log to print the response of the promise.
+    //        4. We have called the weatherResponse function.
+    //        5. We have used async to define an asynchronous function.
+
+  const greet = async () => {
+      // write a code for the wishing greeting based on the time of the day
+        let time = new Date().getHours();
+        if(time >= 0 && time < 12){
+            console.log("Good Morning") ;
+        }else if(time >= 12 && time < 16){
+            console.log("Good Afternoon");
+        }
+        else if(time >= 16 && time < 20){
+            console.log("Good Evening");
+        }
+        else{
+            console.log("Good Night");
+        }
+  }
+
+  const main = async () => {
+      let weather = await weatherResponse();
+      let greetings = await greet();
+      then((value) => {
+          console.log(value);
+      })
+      }
+ console.log(main());
+  // console.log(weather);
+  // console.log(greetings);
+
+
+
+</script>
+</html>

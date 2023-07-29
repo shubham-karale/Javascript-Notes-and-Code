@@ -1,0 +1,31 @@
+Importing files into another files
+ 1) first add the type  = text/javascript in script src tags
+ 2) import ./filename.js = import the file if is in same folder
+ 3) import ./foldername/filename.js = import the file if is in another folder
+
+
+
+ Exporting and importing function into the different files
+
+   file1.js
+
+      export function hello(){
+            console.log("hello");
+        }
+
+
+    file2.js
+
+    import {hello} from './file1.js';
+
+
+    import * as singleVariable from "file1.Js"  //importing all the function from file1.js
+
+    //****************************************************************************************************************************************
+
+
+   TOP LEVEL AWAIT = await can be used outside the async function
+
+    1) top level await can be used in the module file
+    2) top level await can be used in the module file only if the module file is imported in the another file
+    3) Top level await stopped the execution

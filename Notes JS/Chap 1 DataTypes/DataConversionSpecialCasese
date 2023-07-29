@@ -1,0 +1,9 @@
+/*
+ Why  1 and 2 are false but the 3rd statement are true?
+  Ans = Reason is that null is a special value in JavaScript that represents nothingness.
+     and it's nature when we use comparison operator it will convert null to 0.
+     when we use equality operator it will not convert null to 0.
+ */
+console.log(null > 0); //op = false
+console.log(null == 0); // op = false
+console.log(null >= 0); // op = true

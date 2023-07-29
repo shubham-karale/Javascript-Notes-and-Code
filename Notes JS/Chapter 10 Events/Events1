@@ -1,0 +1,37 @@
+1) What is Event Bubbling ?
+Ans = Event bubbling is a way that events propagate (or spread) through the DOM tree in JavaScript.
+ When an event occurs on an element, it bubbles up to its parent element, then to its grandparent element,
+ and so on, until it reaches the top of the document.
+For example, if you have a button inside a div, and you click on the button, the click event will bubble up to the div,
+then to the document. This means that any event handlers that are attached to the div or the document will be called,
+even though the event actually occurred on the button.
+
+
+2)What is Event Propagation?
+Ans = Event propagation is a way of defining the element order when an event occurs.
+there are two types of event propagation 1)Bubbling 2)Capturing 1)Bubbling = false 2)Capturing = true
+
+
+Events are things that happen in the system you are programming, which the system tells you about so your code can react to them.
+
+For example, if the user clicks a button on a webpage, you might want to react to that action by displaying an information
+
+Events are things that happen in the system you are programming — the system produces (or "fires") a signal of some kind when an event occurs, and provides a mechanism by which an action can be automatically taken (that is, some code running) when the event occurs.
+
+To react to an event, you attach an event handler to it. This is a block of code (usually a JavaScript function that you as a programmer create) that runs when the event fires. When such a block of code is defined to run in response to an event, we say we are registering an event handler
+
+objects that can fire events have an addEventListener() method, and this is the recommended mechanism for adding event handlers.
+const btn = document.querySelector("button");
+
+function random(number) {
+  return Math.floor(Math.random() * (number + 1));
+}
+
+btn.addEventListener("click", () => {
+  const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+  document.body.style.backgroundColor = rndCol;
+});
+
+the string "click", to indicate that we want to listen to the click event. The second argument is the event handler function, which is an arrow function in this case. This function is called whenever the click event is fired on the button.
+
+If you've added an event handler using addEventListener(), you can remove it again using the removeEventListener()

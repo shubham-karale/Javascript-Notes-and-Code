@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome to Our Website</h1>
+  <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+         <li>Service</li>
+  </ul>
+  <button class="btn">Click Me</button>
+
+</body>
+<script>
+    const btnEvent = document.querySelector('.btn');
+    btnEvent.addEventListener('click',function (e) {
+        alert('Button Clicked');
+
+    });
+    // Accessing all the ele using li tags
+    // const liEle = document.querySelectorAll('li');
+    // liEle.forEach(function (e)
+    // {
+    //     e.addEventListener('click',function (e) {
+    //         console.log(e.target.innerText);
+    //         e.target.style.color = 'red';
+    //         setTimeout(function () {
+    //             // Removing the element after 1 sec
+    //             e.target.remove(e);
+    //         },1000);
+    //     })
+    // })
+    btnEvent.addEventListener('click',function (e) {
+        setTimeout(function () {
+            // Creating the element after 1 sec
+            e.target.style.backgroundColor = 'red';
+            e.target.style.color = 'white';
+            e.target.style.border = 'none';
+            e.target.style.padding = '10px 20px';
+            e.target.style.borderRadius = '10px';
+            e.target.style.button.ondragover = 'pointer';
+        },1000);
+    })
+
+//     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//     Creating and Removing Elements
+
+    btnEvent.addEventListener('click',(e)=>{
+        const liEle = document.createElement('li');
+        liEle.innerText = 'New List Item';
+        document.querySelector('ul').appendChild(liEle);
+    });
+
+
+</script>
+</html>

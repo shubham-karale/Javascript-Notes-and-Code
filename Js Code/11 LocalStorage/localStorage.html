@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!--
+// Local Storage
+
+  What is Local Storage?
+  Ans = Local Storage is a way to store data on the client's computer.
+    Local Storage is a part of the Web Storage API along with session storage.
+    With Local Storage, web applications can store data locally within the user's browser.
+    Before HTML5, application data had to be stored in cookies, included in every server request.
+    Local Storage is more secure, and large amounts of data can be stored locally, without affecting website performance.
+//Local Storage  = store and retrieve data from your browser
+
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        background-color: #212121;
+        color: white;
+    }
+</style>
+<body>
+
+</body>
+<script>
+    console.log(localStorage);
+//     Local Storage is a way to store data on the client's computer.
+//      Local Storage Methods = setItem(),getItem(),removeItem(),clear()
+//     setItem() = setItem() method stores the data in the local storage
+//     Syntax = localStorage.setItem('key','value'); Local Storage stores value in strings only
+    localStorage.setItem('name','John');
+    localStorage.setItem('age','30');
+    localStorage.setItem('country','India');
+    localStorage.setItem('city','Delhi');
+    localStorage.setItem('state','Delhi');
+    localStorage.setItem('pincode','110001');
+    // If you remove the above statements it still shows in browser console because it is stored in browser locally
+    console.table(localStorage)
+
+    // getItem() = getItem() method retrieves the data from the local storage
+    let name = localStorage.getItem('name');
+    console.log(name);
+    let age = localStorage.getItem('age');
+    console.log(age);
+
+//     removeItem() = removeItem() method removes the data from the local storage
+    localStorage.removeItem('country');
+    console.table(localStorage);
+
+//     clear() = clear() method removes all the data from the local storage
+    localStorage.clear();
+    console.table(localStorage);
+
+
+//     How to store the array of objects in local Storage
+    let vehicles = [{name:'Honda',model:'City',color:'White',price:'10L'},
+        {name:'Maruti',model:'Swift',color:'Black',price:'5L'},
+        {name:'Hyundai',model:'i20',color:'Red',price:'8L'},
+        {name:'Tata',model:'Nexon',color:'Blue',price:'12L'},
+        {name:'Mahindra',model:'XUV',color:'Grey',price:'15L'}];
+    vehicles = JSON.stringify(vehicles); // Converting the array of objects into string
+    localStorage.setItem('vehicles',vehicles);
+    console.log(localStorage)
+
+
+//      How to retrive the 0bjects in object form form local storage
+    let vehicles1 = localStorage.getItem('vehicles');
+    vehicles1 = JSON.parse(vehicles1); // Converting the string into array of objects
+    console.table(vehicles1);
+
+</script>
+</html>

@@ -1,0 +1,22 @@
+1) we can not use arrow function as constructor because arrow function does not have its own this keyword
+2) Call constructor function using new keyword
+3) Constructor function generally is in capital letters and it is a good practice to use it
+4) Function can be used as constructor function if it is called using new keyword
+5) this keyword is used to refer to the current object
+6)instanceof is used to check whether the object is instance of a class or not
+
+Qu 1) What is constructor function ?
+ Ans = Constructor function is used to create a new object with properties and methods
+
+Qu 2) What is prototype ?
+ Ans = Prototype is an object that is associated with every functions and objects by default in JS
+
+Qu 3) What is prototype chain ?
+ Ans = It is used to access the properties and methods of one object from another object
+
+what is prototype = it is a property of a function which is used to add new property to the function
+
+In JavaScript, a constructor function is used to create objects using the new keyword. The constructor function is a normal function that is used with the new keyword to create objects. The new keyword creates a new object of the same type as the function and then calls the function.
+
+
+Hoisitng doesn't work in classes

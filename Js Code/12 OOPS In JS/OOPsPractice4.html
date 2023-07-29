@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encapsulation in JS</title>
+</head>
+<body>
+
+</body>
+<script>
+<!--    Private Properties can be set using the # Operator-->
+    // Private Properties can be set using the # Operator
+// Private Properties can not directly accessed from outside the class
+    class BankAccount{
+        userName;
+        accountNumber;
+        #accountBalance;
+        constructor(userName,accountBalance)
+        {
+            this.userName = userName;
+            this.accountNumber = Date.now();
+            this.#accountBalance = accountBalance;
+        }
+        get balance()
+        {
+            console.log(`Hello ${this.userName} your account balance is ${this.accountBalance}`);
+        }
+        set deposit(amount)
+        {
+            this.#accountBalance += amount;
+            console.log(`Hello ${this.userName} you have deposited ${amount} and your account balance is ${this.accountBalance}`);
+        }
+        withdraw(amount)
+        {
+            if(amount > this.accountBalance)
+            {
+                console.log(`Hello ${this.userName} you don't have sufficient balance`);
+            }
+            else
+            {
+                this.#accountBalance -= amount;
+                console.log(`Hello ${this.userName} you have withdrawn ${amount} and your account balance is ${this.accountBalance}`);
+            }
+        }
+
+    }
+    class CurrentAccount extends BankAccount{
+        constructor(userName,accountBalance)
+        {
+            super(userName,accountBalance);
+        }
+         getLoan(amount){
+            if(amount > 100000)
+            {
+                console.log(`Hello ${this.userName} you are not eligible for loan`);
+            }
+            else
+            {
+                console.log(`Hello ${this.userName} you are eligible for loan`);
+            }
+
+         }
+    }
+    const rakesh = new CurrentAccount('Rakesh',100000);
+    console.log(rakesh.balance); // Hello Rakesh your account balance is 100000
+    rakesh.#accountBalance = 500000; // that is why we use encapsulation
+    //  we can set the values of class from the outside
+    console.log(rakesh.getLoan(5000));//Hello Rakesh you are eligible for loan
+</script>
+</html>

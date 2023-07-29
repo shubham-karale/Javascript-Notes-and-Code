@@ -1,0 +1,100 @@
+
+
+1) Destructuring
+
+     Destructuring is a way to extract data from array or object and assign them to variables
+
+2) Spread Operator
+
+     Spread Operator is used to spread the elements of an array or object into another array or object
+
+3) Rest Operator
+
+         Rest Operator is used to merge a list of function arguments into an array
+
+4) Short Circuiting
+
+         Short Circuiting is a way to assign a default value to a variable if the variable is undefined or null
+         && = if the first value is false then it will return the first value
+         || = if the first value is true then it will return the first value
+
+
+5) Nullish Coalescing Operator
+
+         Nullish Coalescing Operator is used to assign a default value to a variable if the variable is undefined or null
+         ?? = if the first value is null or undefined then it will return the second value
+
+         only checks null and undefined not false or 0
+
+
+6) Optional Chaining
+
+            Optional Chaining is used to check if a property exists in an object or not
+            ?. = if the property exists then it will return the value of the property otherwise it will return undefined
+
+            E.g.  const name = person?.name ?.FirstName;
+
+
+
+7) Template Literals
+
+            Template Literals are used to create a string with variables
+            `` = backticks are used to create a template literal
+            ${} = curly braces are used to insert a variable in a template literal
+
+
+8) Arrow Functions
+
+            Arrow Functions are used to create a function
+            () => {} = arrow function syntax
+            () => {} = arrow function with implicit return
+            () => () = arrow function with explicit return
+            (a) => {} = arrow function with one parameter
+            a => {} = arrow function with one parameter without parenthesis
+            (a, b) => {} = arrow function with multiple parameters
+            (a, b) => a + b = arrow function with multiple parameters and implicit return
+            (a, b) => { return a + b } = arrow function with multiple parameters and explicit return
+
+
+
+9) Promises
+
+            Promises are used to handle asynchronous operations
+            new Promise((resolve, reject) => {}) = promise syntax
+            resolve() = used to resolve a promise
+            reject() = used to reject a promise
+            .then() = used to handle resolved promise
+            .catch() = used to handle rejected promise
+            .finally() = used to handle both resolved and rejected promise
+
+
+10) Async/Await
+
+            Async/Await is used to handle asynchronous operations
+            async = used to create an async function
+            await = used to wait for a promise to resolve or reject
+            try {} catch {} = used to handle errors in async/await
+
+
+11) SET
+
+            Set is used to store unique values of any type
+            new Set() = set syntax
+            .add() = used to add a value to a set
+            .has() = used to check if a value exists in a set
+            .delete() = used to delete a value from a set
+            .clear() = used to delete all values from a set
+            .size = used to get the size of a set
+
+
+
+12) MAP
+
+            Map is used to store key-value pairs
+            new Map() = map syntax
+            .set() = used to add a key-value pair to a map
+            .get() = used to get the value of a key in a map
+            .has() = used to check if a key exists in a map
+            .delete() = used to delete a key-value pair from a map
+            .clear() = used to delete all key-value pairs from a map
+            .size = used to get the size of a map

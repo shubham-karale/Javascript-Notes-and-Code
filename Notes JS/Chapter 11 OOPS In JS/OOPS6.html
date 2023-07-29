@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOPS 6</title>
+    <style>
+        * {
+            font-family: poppins, sans-serif;
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+    //     What is getter and setter in JS
+    //     Ans = Getter and setter are used to get and set the value of private variables
+    //    What is private variable in JS
+    //    Ans = Private variables are those variables which can be accessed only inside the class
+    // What is instanceOf operator in JS
+    // Ans = instanceof operator is used to check whether the object is instance of class or not
+
+    // Instamce Of
+    //ans = instanceof operator is used to check whether the object is instance of class or not
+    class Bird {
+        constructor(name) {
+            this._name = name;
+        }
+
+        fly() {
+            console.log(`${this._name} is flying`);
+        }
+
+        get name() {
+            this._name = name;
+        }
+
+        set name(name) {
+            this._name = name;
+        }
+
+        newName(newName) {
+            return newName;
+        }
+    }
+
+    class Mor extends Bird {
+        constructor(name) {
+            super();
+        }
+
+        fly() {
+            console.log(`${this._name} is flying`);
+        }
+
+    }
+
+    class Peacock {
+        constructor(name) {
+            this._name = name;
+        }
+
+        fly() {
+            console.log(`${this._name} is flying`);
+        }
+
+        get name() {
+            this._name = name;
+        }
+
+        set name(name) {
+            this._name = name;
+        }
+    }
+
+    let bird = new Bird('Sparrow');
+    // console.log(bird.name("Chidiya"))
+    console.log(bird);
+    console.log(bird.name);
+    let peakcock = new Peacock('Mor');
+    console.log(peakcock instanceof Bird) // false
+    let mor = new Mor('Mayur');
+    console.log(mor instanceof Bird);  // true
+</script>
+</html>

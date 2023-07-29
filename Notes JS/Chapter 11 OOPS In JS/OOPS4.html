@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+            *{
+                font-family: poppins,sans-serif;
+                background-color: #212121;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+    class Employee{
+        constructor(name,age,designation)
+        {
+            this.name = name;
+            this.age = age;
+            this.designation = designation;
+        }
+        greet()
+        {
+            console.log(`Hello ${this.name}`);
+        }
+        requestLeaves(leaves){
+            console.log(`Hello ${this.name} you have ${leaves} leaves left`);
+        }
+    }
+    class Programmer extends Employee{
+        requestLeaves(leaves)
+        {
+            super.requestLeaves(leaves);
+        //     what is super() keyword
+        //     Ans = super() keyword is used to call the constructor of parent class
+
+        }
+
+    }
+    let rohan = new Employee('Rohan',20,'Programmer');
+    rohan.greet();
+    rohan.requestLeaves(10);
+    let ram = new Programmer('Ram',20,'Programmer');
+    ram.requestLeaves(15);
+</script>
+</html>

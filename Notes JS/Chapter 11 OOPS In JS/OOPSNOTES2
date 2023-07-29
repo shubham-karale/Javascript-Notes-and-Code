@@ -1,0 +1,16 @@
+What is Object
+Ans = Object is a collection of properties and methods.
+
+What is class in OOP
+Ans = Class is a blueprint of an object.
+
+a class doesn't do anything: it's a kind of template for creating concrete objects of that type
+
+The process of creating an instance is performed by a special function called a constructor.
+
+the keyword new to signal that a constructor is being called.
+
+when a method has the same name but a different implementation in different classes - is called polymorphism. When a
+method in a subclass replaces the superclass's implementation, we say that the subclass overrides the version in the superclass. = Method overriding
+
+The object's internal state is kept private, meaning that it can only be accessed by the object's own methods, not from other objects. Keeping an object's internal state private, and generally making a clear division between its public interface and its private internal state, is called encapsulation.

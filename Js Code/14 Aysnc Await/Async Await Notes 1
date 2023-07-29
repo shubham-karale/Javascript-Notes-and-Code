@@ -1,0 +1,23 @@
+Hum Kisi Bhi function ko aysnc bana sakte hai aur uske andar Promise Ko await kar sakte hai
+
+Async function always return the promise
+
+Async = It is used to define an asynchronous function. It returns a promise. It can contain await expressions.
+
+Await = It is used to wait for the promise to resolve or reject. It can only be used inside an async function.
+
+Async/await is a powerful feature in JavaScript that simplifies asynchronous programming and makes it appear more like synchronous code. It is built on top of Promises and provides a more intuitive and readable way to write asynchronous code.
+
+    Async/await:
+        Async functions: Special type of function that allows the use of await inside.
+        Defined using the async keyword before function declaration or expression.
+        Implicitly returns a Promise that resolves to the function's return value or rejects with an error.
+
+    Await keyword:
+        Used inside async functions to pause execution until a Promise settles.
+        Function waits for Promise resolution and resumes execution, returning the resolved value.
+        Can only be used with Promises or thenable objects (with a then method).
+
+    Error handling:
+        Use try/catch blocks to handle errors within async functions.
+        If a Promise is rejected, an error is thrown and can be caught with a catch block.

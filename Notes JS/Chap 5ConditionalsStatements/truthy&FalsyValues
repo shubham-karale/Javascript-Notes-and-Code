@@ -1,0 +1,21 @@
+
+
+Falsy values = false, 0, "", null, undefined, NaN,BigInt 0n,-0
+Truthy values = true, 1, " ", [], {}, -1, BigInt 1n, -1,'false', '0', 'null', 'undefined', 'NaN', '0n', '-0'
+ function() {}  = empty function also has truthy values
+
+Anyhting in string is truthy Values
+
+
+    false == 0 = true
+    false == "" = true
+    false == undefined = true
+    false == null = true
+    false == NaN = true
+    0 == "" = true
+
+ Nullish coalescing Operator (??)
+ 1) nullish coalescing operator is represented by ??
+ 2) It is used to check if the value is null or undefined
+ 3) It is used to check if the value is null or undefined then it will return the right side value
+

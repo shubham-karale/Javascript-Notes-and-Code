@@ -1,0 +1,47 @@
+// Node Package Manager
+
+ npm init = creates a package.json file
+
+ npm init -y = creates a package.json file with default settings
+
+ npm install = installs all dependencies in package.json
+
+ as json file resites in your project whenever you share the file with others that means after extacting the file from the zip folder you have to run npm install to install all the dependencies
+
+ npm install = installs all dependencies in package.json
+
+ //******************************************************************************************************************************************
+   ++++++++++++++++++++++++++++++++++IMPORTANT FOR REACT+++++++++++++++++++++++++++++++++
+ MODULE IMPORTS AND EXPORTS
+
+ export function_name = exports the function
+
+ import {function_name} from './file_name.js' = imports the function
+
+ export default function_name = exports the function as default
+
+ import function_name from './file_name.js' = imports the function as default
+
+ //******************************************************************************************************************************************
+
+   Express.Js
+
+   npm i -g nodemon = installs nodemon globally
+
+
+    //******************************************************************************************************************************************
+
+
+    REGAX = Regular Expressions = Regular expressions are patterns used to match character combinations in strings.
+
+    INTERVIEW QUESTIONS
+
+    replace all very words in a string with another word = str.replace(/very/g, ' ')
+    // Replace all very words in a string with another word is possible using reagx only
+
+    /arry/g = g means global matches arry in the strings
+    /.arry/g = . means any character before arry in the strings
+
+    \d = any digit
+
+    \d.arry/g = \d means any digit before arry in the strings

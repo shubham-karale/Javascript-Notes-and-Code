@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise Chaining</title>
+    <style>
+        body{
+            background-color: #2a2a2a;
+            color: #fff;
+            font-family: Fira Code, monospace;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+    let promise1 = new Promise(function(resolve, reject) {
+        console.log("Promise Started");
+        setTimeout(function() {
+            resolve(69);
+            console.log("Promise 1 Ended After 2 Sec")
+        }, 2000);
+    }).then(function(value) {
+        console.log("Promise 1 Returned Value: " + value);
+        let promise2 = new Promise(function(resolve, reject) {
+            console.log("Promise 2 Started");
+            setTimeout(function() {
+                resolve(value + 1);
+                console.log("Promise 2 Ended After 2 Sec")
+            }, 2000);
+        }).then(function(value) {
+            console.log("Promise 3 Returned Value: " + value);
+            let promise2 = new Promise(function(resolve, reject) {
+                console.log("Promise 3 Started");
+                setTimeout(function() {
+                    resolve(value + 1);
+                    console.log("Promise 3 Ended After 2 Sec")
+                }, 2000);
+        })
+        return value + 1;
+    }).then(function(value) {
+        console.log("Promise 4 Returned Value: " + value);
+        let promise2 = new Promise(function(resolve, reject) {
+            console.log("Promise 4 Started");
+            setTimeout(function() {
+                resolve(value + 1);
+                console.log("Promise 4 Ended After 2 Sec")
+            }, 2000);
+        })
+        return value + 1;
+    }).then(function(value) {
+        console.log("Promise 5 Returned Value: " + value);
+        let promise2 = new Promise(function(resolve, reject) {
+            console.log("Promise 5 Started");
+            setTimeout(function() {
+                resolve(value + 1);
+                console.log("Promise 5 Ended After 2 Sec")
+            }, 2000);
+        })
+        return value + 1;
+    }).then(function(value) {
+        console.log("Promise 6 Returned Value: " + value);
+        let promise2 = new Promise(function(resolve, reject) {
+            console.log("Promise 6 Started");
+            setTimeout(function() {
+                resolve(value + 1);
+                console.log("Promise 6 Ended After 2 Sec")
+            }, 2000);
+        })
+        return value + 1;
+    }).then(function(value) {
+        console.log("Promise 7 Returned Value: " + value);
+        let promise2 = new Promise(function(resolve, reject) {
+            console.log("Promise 7 Started");
+            setTimeout(function() {
+                resolve(value + 1);
+                console.log("Promise 7 Ended After 2 Sec")
+            }, 2000);
+        })
+        return value + 1;
+    }).then(function(value) {
+        console.log("Promise 8 Returned Value: " + value);
+        let promise2 = new Promise(function(resolve, reject) {
+            console.log("Promise 8 Started");
+            setTimeout(function() {
+                resolve(value + 1);
+                console.log("Promise 8 Ended After 2 Sec")
+            }, 2000);
+        })
+        return value + 1;
+    }).then(function(value) {
+        console.log("Promise 9 Returned Value: " + value);
+        let promise2 = new Promise(function(resolve, reject) {
+            console.log("Promise 9 Started");
+            setTimeout(function() {
+                resolve(value + 1);
+                console.log("Promise 9 Ended After 2 Sec")
+            }, 2000);
+        })
+        return value + 1;
+    });
+    });
+</script>
+</html>
